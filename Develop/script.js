@@ -11,14 +11,16 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+
 }
 
 // at least 8 characters no more than 128
 
 function generatePassword(){
- let passwordPrompt = prompt("Password criteria, would you like to continue?");
+  let passwordPrompt = prompt("Password criteria, would you like to continue")
 
-
+  return passwordPrompt;
+}
 
 
 // Add event listener to generate button
