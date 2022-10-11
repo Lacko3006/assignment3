@@ -1,8 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
- var passwordLength = 12;
+var chars = "0123456789!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var charsLower = "abcdefghijklmnopqrstuvwxyz"
  var password = "";
 
 // Write password to the #password input
@@ -18,6 +18,12 @@ function writePassword() {
 
 function generatePassword(){
   let passwordPrompt = prompt("Password criteria, would you like to continue")
+  let passwordLength = prompt("how long do you want the password to be?")
+  if (passwordLength < 8 || passwordLength > 128){
+    window.alert("wrong size")
+  }
+  console.log(passwordPrompt)
+
 
   return passwordPrompt;
 }
@@ -25,3 +31,12 @@ function generatePassword(){
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+document.getElementById("password").value = password; 
+
+
+
+//var Hello = 'Hello'
+  //var Goodbye = 'bye'
+
+  //var HelloGoodbye = Hello + Goodbye
+  //console.log(HelloGoodbye)
