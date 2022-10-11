@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+let passwordPrompt = prompt("Please proceed for password criteria")
 
 // Write password to the #password input
 function writePassword() {
