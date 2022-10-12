@@ -16,26 +16,39 @@ function writePassword() {
 function generatePassword() {
   let passwordLength = prompt("how long do you want the password to be?");
   if (passwordLength < 8 || passwordLength > 128) {
-    window.alert("wrong size");
-  };
+    window.alert("Size not permitted.");
+  }
 
-  let passwordCharsLow = prompt("Would you like to include lowercase characters?");
+  let passwordCharsLow = prompt(
+    "Would you like to include lowercase characters?"
+  );
   if (passwordCharsLow === "yes") {
-    window.alert("Lowercase characters added.")
+    window.alert("Lowercase characters added.");
   }
   if (passwordCharsLow === "no") {
-    window.alert("Lowercase characters dismissed")
+    window.alert("Lowercase characters dismissed.");
   }
 
-  let passwordCharsUpp = prompt("Would you like to include uppercase characters?");
+  let passwordCharsUpp = prompt(
+    "Would you like to include uppercase characters?"
+  );
   if (passwordCharsUpp === "yes") {
-    window.alert("Uppercase characters added.")
+    window.alert("Uppercase characters added.");
   }
   if (passwordCharsUpp === "no") {
-    window.alert("Uppercase characters dismissed")
+    window.alert("Uppercase characters dismissed.");
   }
-  
-  console.log(passwordPrompt);
+
+  let passwordCharsNum = prompt(
+    "Would you like to include numeric characters?"
+  );
+  if (passwordCharsNum === "yes") {
+    window.alert("Uppercase characters added.");
+  }
+  if (passwordCharsNum === "no") {
+    window.alert("Uppercase characters dismissed.");
+  }  
+
 
   // return
 }
@@ -44,8 +57,9 @@ function generatePassword() {
 generateBtn.addEventListener("click", writePassword);
 document.getElementById("password").value = password;
 
-//var Hello = 'Hello'
-//var Goodbye = 'bye'
+/*var Hello = 'Hello'
+var Goodbye = 'bye'
 
-//var HelloGoodbye = Hello + Goodbye
-//console.log(HelloGoodbye)
+var HelloGoodbye = Hello + Goodbye
+console.log(HelloGoodbye)
+*/
