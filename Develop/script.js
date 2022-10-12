@@ -61,6 +61,11 @@ function generatePassword() {
   }
 }
 
+function passwordRandom(){
+  
+}
+
+
 // let RandomisePassword = function RandomisePassword(length) {
 //   let result = " ";
 //   const passwordLength = charsLower.length;
