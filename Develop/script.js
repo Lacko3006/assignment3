@@ -1,7 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var chars = "0123456789!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var charsNum = "0123456789";
+var charsSpecial= "!@#$%^&*()";
+var charsUpp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var charsLower = "abcdefghijklmnopqrstuvwxyz";
 var password = "";
 
@@ -49,13 +51,26 @@ function generatePassword() {
     window.alert("Uppercase characters dismissed.");
   }  
 
+  let passwordCharsSpecial = prompt(
+    "Would you like to include special characters?"
+  );
+  if (passwordCharsSpecial === "yes") {
+    window.alert("Special characters added.");
+  }
+  if (passwordCharsSpecial === "no") {
+    window.alert("Special characters dismissed.");
+  }    
 
-  // return
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 document.getElementById("password").value = password;
+
+
+
+
+
 
 /*var Hello = 'Hello'
 var Goodbye = 'bye'
