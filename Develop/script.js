@@ -1,13 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var charsNum = "0123456789";
-var charsSpecial= "!@#$%^&*()";
-var charsUpp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var charsLower = "abcdefghijklmnopqrstuvwxyz";
-var password = "";
+const charsNum = "0123456789";
+const charsSpecial = "!@#$%^&*()";
+const charsUpp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const charsLower = "abcdefghijklmnopqrstuvwxyz";
+const password = "";
 
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -49,7 +48,7 @@ function generatePassword() {
   }
   if (passwordCharsNum === "no") {
     window.alert("Uppercase characters dismissed.");
-  }  
+  }
 
   let passwordCharsSpecial = prompt(
     "Would you like to include special characters?"
@@ -59,22 +58,24 @@ function generatePassword() {
   }
   if (passwordCharsSpecial === "no") {
     window.alert("Special characters dismissed.");
-  }    
-
+  }
 }
+
+// let RandomisePassword = function RandomisePassword(length) {
+//   let result = " ";
+//   const passwordLength = charsLower.length;
+//   for (let i = 0; i < length; i++) {
+//     result += charsLower.charAt(Math.floor(Math.random() * passwordLength));
+//   }
+
+//   return result;
+// };
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-document.getElementById("password").value = password;
 
+var Hello = "Hello";
+var Goodbye = "bye";
 
-
-
-
-
-/*var Hello = 'Hello'
-var Goodbye = 'bye'
-
-var HelloGoodbye = Hello + Goodbye
-console.log(HelloGoodbye)
-*/
+var HelloGoodbye = Hello + Goodbye;
+console.log(HelloGoodbye);
