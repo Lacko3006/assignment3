@@ -65,7 +65,8 @@ function generatePassword() {
 
 //function passwordRandom(){
   let passwordRandom = Math.floor(Math.random()*charsLower.length);
-  console.log(passwordRandom);
+  var selectedCharLower = charsLower[passwordRandom]
+  console.log(selectedCharLower);
 
 
 
