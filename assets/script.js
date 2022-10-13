@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-const charsNum = "0123456789";
+const charsNum = ["0","1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const charsSpecial = "!@#$%^&*()";
 const charsUpp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const charsLower = "abcdefghijklmnopqrstuvwxyz";
@@ -62,7 +62,7 @@ function generatePassword() {
 }
 
 function passwordRandom(){
-  
+
 }
 
 
