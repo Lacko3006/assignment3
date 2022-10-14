@@ -75,7 +75,7 @@ function generatePassword() {
 
   for (let i = 0; i < passwordLength; i++) {
     let charOptions = [];
-    let randomCharOptions = Math.floor(Math.random() * charOptions.length);
+    var randomCharOptions = Math.floor(Math.random() * charOptions.length);
     var selectedCharOptions = charOptions[randomCharOptions];
     password = password + selectedCharOptions;
   }
@@ -91,10 +91,6 @@ function generatePassword() {
 
   if (passwordCharsLow === "no") {
     window.alert("Lowercase characters dismissed.");
-    return;
-  }
-  if (passwordCharsLow === false) {
-    return;
   }
   let passwordCharsUpp = prompt(
     "Would you like to include uppercase characters?"
@@ -106,7 +102,7 @@ function generatePassword() {
 
   if (passwordCharsUpp === "no") {
     window.alert("Uppercase characters dismissed.");
-    return;
+  
   }
 
   let passwordCharsNum = prompt(
@@ -118,7 +114,7 @@ function generatePassword() {
   }
   if (passwordCharsNum === "no") {
     window.alert("Uppercase characters dismissed.");
-    return;
+  
   }
 
   let passwordCharsSpecial = prompt(
@@ -133,7 +129,7 @@ function generatePassword() {
   console.log(password);
   if (passwordCharsSpecial === "no") {
     window.alert("Special characters dismissed.");
-    return;
+
   }
 }
 
