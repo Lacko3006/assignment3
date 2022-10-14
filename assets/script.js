@@ -74,7 +74,7 @@ function generatePassword() {
   }
 
   for (let i = 0; i < passwordLength; i++) {
-    let charOptions = [];
+    const charOptions = [];
     var randomCharOptions = Math.floor(Math.random() * charOptions.length);
     var selectedCharOptions = charOptions[randomCharOptions];
     password = password + selectedCharOptions;
@@ -123,10 +123,10 @@ function generatePassword() {
   if (passwordCharsSpecial === "yes") {
     charOptions = charOptions.concat(charsSpecial);
     window.alert("Special characters added.");
+    console.log(charOptions);
+    console.log(password);
   }
   
-  console.log(charOptions);
-  console.log(password);
   if (passwordCharsSpecial === "no") {
     window.alert("Special characters dismissed.");
 
