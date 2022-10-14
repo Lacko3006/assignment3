@@ -1,10 +1,64 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-const charsNum = ["0","1", "2", "3", "4", "5", "6", "7", "8", "9"];
-const charsSpecial = ["!", "@", "#", "$", "%", "^", "&", "*","(",")"];
-const charsUpp = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-const charsLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y","z"];
+const charsNum = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const charsSpecial = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+const charsUpp = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
+const charsLower = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
 const password = "";
 
 function writePassword() {
@@ -28,9 +82,10 @@ function generatePassword() {
   }
   if (passwordCharsLow === "no") {
     window.alert("Lowercase characters dismissed.");
+    return;
   }
   if (passwordCharsLow === false) {
-  return;
+    return;
   }
   let passwordCharsUpp = prompt(
     "Would you like to include uppercase characters?"
@@ -63,10 +118,18 @@ function generatePassword() {
   }
 }
 
-//function passwordRandom(){
-  let passwordRandom = Math.floor(Math.random()*charsLower.length);
-  var selectedCharLower = charsLower[passwordRandom]
-  console.log(selectedCharLower);
+//Character lower random selector
+let passwordCharsLowRandom = Math.floor(Math.random() * charsLower.length);
+var selectedCharLower = charsLower[passwordCharsLowRandom];
+//Character Number random selector
+let passwordCharsNumRandom = Math.floor(Math.random() * charsNum.length);
+var selectedCharNum = charsNum[passwordCharsNumRandom];
+//Character special random selector
+let passwordCharsSpecialRandom = Math.floor(Math.random() * charsSpecial.length);
+var selectedCharSpecial = charsSpecial[passwordCharsSpecialRandom];
+//Character upper random selector
+let passwordCharsUpperRandom = Math.floor(Math.random() * charsUpp.length);
+var selectedCharUpper = charsUpp[passwordCharsUpperRandom];
 
 
 
@@ -88,3 +151,6 @@ var Goodbye = "bye";
 
 var HelloGoodbye = Hello + Goodbye;
 console.log(HelloGoodbye);
+
+passwordRandom = selectedCharLower + selectedCharNum + selectedCharSpecial + selectedCharUpper;
+console.log(passwordRandom);
