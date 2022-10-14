@@ -59,7 +59,8 @@ const charsLower = [
   "y",
   "z",
 ];
-const password = "";
+//let password = "";
+
 
 function writePassword() {
   var password = generatePassword();
@@ -73,10 +74,23 @@ function generatePassword() {
   if (passwordLength < 8 || passwordLength > 128) {
     window.alert("Size not permitted.");
   }
-  for (let i = 0; i < passwordLength; i++){
-   
-    console.log(passwordLength)
-}
+
+  let passwordRandom = "";
+  for (let i = 0; i < passwordLength; i++) {
+    const passwordCharsLowRandom = Math.floor(
+      Math.random() * charsLower.length
+    );
+    const selectedCharLower = charsLower[passwordCharsLowRandom];
+    passwordRandom = passwordRandom + selectedCharLower;
+  }
+  console.log(passwordRandom);
+
+
+
+
+
+
+
 
   let passwordCharsLow = prompt(
     "Would you like to include lowercase characters?"
@@ -125,8 +139,8 @@ function generatePassword() {
 }
 
 //Character lower random selector
-let passwordCharsLowRandom = Math.floor(Math.random() * charsLower.length);
-var selectedCharLower = charsLower[passwordCharsLowRandom];
+// let passwordCharsLowRandom = Math.floor(Math.random() * charsLower.length);
+// var selectedCharLower = charsLower[passwordCharsLowRandom];
 //Character Number random selector
 let passwordCharsNumRandom = Math.floor(Math.random() * charsNum.length);
 var selectedCharNum = charsNum[passwordCharsNumRandom];
@@ -159,5 +173,4 @@ var HelloGoodbye = Hello + Goodbye;
 console.log(HelloGoodbye);
 */
 
-passwordRandom = selectedCharLower + selectedCharNum + selectedCharSpecial + selectedCharUpper;
-console.log(passwordRandom);
+//passwordRandom = selectedCharLower + selectedCharNum + selectedCharSpecial + selectedCharUpper;
