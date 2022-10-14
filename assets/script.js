@@ -59,8 +59,6 @@ const charsLower = [
   "y",
   "z",
 ];
-//let password = "";
-
 
 function writePassword() {
   var password = generatePassword();
@@ -138,10 +136,6 @@ function generatePassword() {
 
 }
 
-//Character lower random selector
-// let passwordCharsLowRandom = Math.floor(Math.random() * charsLower.length);
-// var selectedCharLower = charsLower[passwordCharsLowRandom];
-//Character Number random selector
 let passwordCharsNumRandom = Math.floor(Math.random() * charsNum.length);
 var selectedCharNum = charsNum[passwordCharsNumRandom];
 //Character special random selector
