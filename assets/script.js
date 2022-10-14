@@ -80,42 +80,45 @@ function generatePassword() {
       Math.random() * charsLower.length
     );
     const selectedCharLower = charsLower[passwordCharsLowRandom];
-    
-    
+    password = password + charOptions;
   }
-  // console.log(password);
 
+
+ 
+
+  let charOptions = [];
   let passwordCharsLow = prompt(
     "Would you like to include lowercase characters?"
   );
   if (passwordCharsLow === "yes") {
     charOptions = charOptions.concat(charsLower);
-    password = password += charOptions;
     window.alert("Lowercase characters added.");
   }
-  console.log(password)
-  console.log(charOptions)
+
   if (passwordCharsLow === "no") {
     window.alert("Lowercase characters dismissed.");
+    return;
+  }
+  if (passwordCharsLow === false) {
     return;
   }
   let passwordCharsUpp = prompt(
     "Would you like to include uppercase characters?"
   );
-
-  if (passwordCharsUpp === 'yes') {
-    charOptions = charOptions.concat(charsLower);
+  if (passwordCharsUpp === "yes") {
+    charOptions = charOptions.concat(charsUpp);
     window.alert("Uppercase characters added.");
   }
-  if (passwordCharsUpp === "yes") {
+
+  if (passwordCharsUpp === "no") {
     window.alert("Uppercase characters dismissed.");
-    return
   }
 
   let passwordCharsNum = prompt(
     "Would you like to include numeric characters?"
   );
   if (passwordCharsNum === "yes") {
+    charOptions = charOptions.concat(charsNum);
     window.alert("Uppercase characters added.");
   }
   if (passwordCharsNum === "no") {
@@ -126,8 +129,11 @@ function generatePassword() {
     "Would you like to include special characters?"
   );
   if (passwordCharsSpecial === "yes") {
+    charOptions = charOptions.concat(charsSpecial);
     window.alert("Special characters added.");
   }
+  console.log(charOptions)
+  console.log(password);
   if (passwordCharsSpecial === "no") {
     window.alert("Special characters dismissed.");
   }
@@ -142,6 +148,12 @@ var selectedCharSpecial = charsSpecial[passwordCharsSpecialRandom];
 //Character upper random selector
 let passwordCharsUpperRandom = Math.floor(Math.random() * charsUpp.length);
 var selectedCharUpper = charsUpp[passwordCharsUpperRandom];
+
+//Character overall selector
+let randomCharOptions = Math.floor(Math.random() * charOptions.length);
+var selectedCharOptions = charOptions[randomCharOptions]
+
+console.log(charOptions)
 
 
 
