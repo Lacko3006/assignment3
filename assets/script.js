@@ -61,7 +61,6 @@ const charsLower = [
 ];
 let password = "";
 let charOptions = [];
-
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -80,33 +79,37 @@ function generatePassword() {
       Math.random() * charsLower.length
     );
     const selectedCharLower = charsLower[passwordCharsLowRandom];
-    password = password + selectedCharLower;
+    
+    
+    password = password + charOptions;
   }
-  console.log(password);
 
   let passwordCharsLow = prompt(
     "Would you like to include lowercase characters?"
   );
-  if (passwordCharsLow === "yes") {
+  if (passwordCharsLow === true) {
     charOptions = charOptions.concat(charsLower);
     window.alert("Lowercase characters added.");
+    console.log(charOptions)
   }
-  console.log(charOptions)
-  if (passwordCharsLow === "no") {
-    window.alert("Lowercase characters dismissed.");
-    return;
-  }
+  console.log(password)
   if (passwordCharsLow === false) {
+    window.alert("Lowercase characters dismissed.");
     return;
   }
   let passwordCharsUpp = prompt(
     "Would you like to include uppercase characters?"
   );
-  if (passwordCharsUpp === "yes") {
+
+  if (passwordCharsUpp === true) {
+    charOptions = charOptions.concat(charsUpp);
     window.alert("Uppercase characters added.");
   }
-  if (passwordCharsUpp === "no") {
+
+  console.log(charOptions)
+  if (passwordCharsUpp === false) {
     window.alert("Uppercase characters dismissed.");
+    return
   }
 
   let passwordCharsNum = prompt(
@@ -163,3 +166,4 @@ console.log(HelloGoodbye);
 */
 
 //passwordRandom = selectedCharLower + selectedCharNum + selectedCharSpecial + selectedCharUpper;
+
