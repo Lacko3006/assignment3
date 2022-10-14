@@ -60,8 +60,6 @@ const charsLower = [
   "z",
 ];
 let password = "";
-let charOptions = [];
-
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -76,15 +74,11 @@ function generatePassword() {
   }
 
   for (let i = 0; i < passwordLength; i++) {
-    const passwordCharsLowRandom = Math.floor(
-      Math.random() * charsLower.length
-    );
-    const selectedCharLower = charsLower[passwordCharsLowRandom];
-    password = password + charOptions;
+    let charOptions = [];
+    let randomCharOptions = Math.floor(Math.random() * charOptions.length);
+    var selectedCharOptions = charOptions[randomCharOptions];
+    password = password + selectedCharOptions;
   }
-
-
- 
 
   let charOptions = [];
   let passwordCharsLow = prompt(
@@ -112,6 +106,7 @@ function generatePassword() {
 
   if (passwordCharsUpp === "no") {
     window.alert("Uppercase characters dismissed.");
+    return;
   }
 
   let passwordCharsNum = prompt(
@@ -123,6 +118,7 @@ function generatePassword() {
   }
   if (passwordCharsNum === "no") {
     window.alert("Uppercase characters dismissed.");
+    return;
   }
 
   let passwordCharsSpecial = prompt(
@@ -132,49 +128,16 @@ function generatePassword() {
     charOptions = charOptions.concat(charsSpecial);
     window.alert("Special characters added.");
   }
-  console.log(charOptions)
+  
+  console.log(charOptions);
   console.log(password);
   if (passwordCharsSpecial === "no") {
     window.alert("Special characters dismissed.");
+    return;
   }
-
 }
-
-let passwordCharsNumRandom = Math.floor(Math.random() * charsNum.length);
-var selectedCharNum = charsNum[passwordCharsNumRandom];
-//Character special random selector
-let passwordCharsSpecialRandom = Math.floor(Math.random() * charsSpecial.length);
-var selectedCharSpecial = charsSpecial[passwordCharsSpecialRandom];
-//Character upper random selector
-let passwordCharsUpperRandom = Math.floor(Math.random() * charsUpp.length);
-var selectedCharUpper = charsUpp[passwordCharsUpperRandom];
-
-//Character overall selector
-let randomCharOptions = Math.floor(Math.random() * charOptions.length);
-var selectedCharOptions = charOptions[randomCharOptions]
-
-console.log(charOptions)
-
-
-
-// let RandomisePassword = function RandomisePassword(length) {
-//   let result = " ";
-//   const passwordLength = charsLower.length;
-//   for (let i = 0; i < length; i++) {
-//     result += charsLower.charAt(Math.floor(Math.random() * passwordLength));
-//   }
-
-//   return result;
-// };
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-/* var Hello = "Hello";
-var Goodbye = "bye";
 
-var HelloGoodbye = Hello + Goodbye;
-console.log(HelloGoodbye);
-*/
-
-//passwordRandom = selectedCharLower + selectedCharNum + selectedCharSpecial + selectedCharUpper;
