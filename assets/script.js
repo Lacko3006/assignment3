@@ -73,6 +73,10 @@ function generatePassword() {
   if (passwordLength < 8 || passwordLength > 128) {
     window.alert("Size not permitted.");
   }
+  for (let i = 0; i < passwordLength; i++){
+   
+    console.log(passwordLength)
+}
 
   let passwordCharsLow = prompt(
     "Would you like to include lowercase characters?"
@@ -80,6 +84,7 @@ function generatePassword() {
   if (passwordCharsLow === "yes") {
     window.alert("Lowercase characters added.");
   }
+  console.log
   if (passwordCharsLow === "no") {
     window.alert("Lowercase characters dismissed.");
     return;
@@ -116,6 +121,7 @@ function generatePassword() {
   if (passwordCharsSpecial === "no") {
     window.alert("Special characters dismissed.");
   }
+
 }
 
 //Character lower random selector
@@ -146,11 +152,12 @@ var selectedCharUpper = charsUpp[passwordCharsUpperRandom];
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-var Hello = "Hello";
+/* var Hello = "Hello";
 var Goodbye = "bye";
 
 var HelloGoodbye = Hello + Goodbye;
 console.log(HelloGoodbye);
+*/
 
 passwordRandom = selectedCharLower + selectedCharNum + selectedCharSpecial + selectedCharUpper;
 console.log(passwordRandom);
