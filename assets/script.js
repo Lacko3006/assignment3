@@ -59,6 +59,8 @@ const charsLower = [
   "y",
   "z",
 ];
+let password = "";
+let charOptions = [];
 
 function writePassword() {
   var password = generatePassword();
@@ -73,30 +75,23 @@ function generatePassword() {
     window.alert("Size not permitted.");
   }
 
-  let passwordRandom = "";
   for (let i = 0; i < passwordLength; i++) {
     const passwordCharsLowRandom = Math.floor(
       Math.random() * charsLower.length
     );
     const selectedCharLower = charsLower[passwordCharsLowRandom];
-    passwordRandom = passwordRandom + selectedCharLower;
+    password = password + selectedCharLower;
   }
-  console.log(passwordRandom);
-
-
-
-
-
-
-
+  console.log(password);
 
   let passwordCharsLow = prompt(
     "Would you like to include lowercase characters?"
   );
   if (passwordCharsLow === "yes") {
+    charOptions = charOptions.concat(charsLower);
     window.alert("Lowercase characters added.");
   }
-  console.log
+  console.log(charOptions)
   if (passwordCharsLow === "no") {
     window.alert("Lowercase characters dismissed.");
     return;
