@@ -59,21 +59,18 @@ const charsLower = [
   "y",
   "z",
 ];
-let password = ""; 
 let charOptions = [];
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.getElementById("#password").values = password;
-  passwordText.values = password;
-  console.log(passwordText)
-
-
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
 function generatePassword() {
   let passwordLength = prompt("how long do you want the password to be?");
   if (passwordLength < 8 || passwordLength > 128) {
     window.alert("Size not permitted.");
   }
-
+  
   let passwordCharsLow = prompt(
     "Would you like to include lowercase characters?"
   );
@@ -114,25 +111,27 @@ function generatePassword() {
   if (passwordCharsSpecial === "yes") {
     charOptions = charOptions.concat(charsSpecial);
     window.alert("Special characters added.");
-    password = password + selectedCharOptions;
+
   }
 
   if (passwordCharsSpecial === "no") {
     window.alert("Special characters dismissed.");
   }
 
+  // let password = "";
   for (let i = 0; i < passwordLength; i++) {
-    let password = "";
+    password += i + "";
     var randomCharOptions = Math.floor(Math.random() * charOptions.length);
     var selectedCharOptions = charOptions[randomCharOptions];
     password = password + selectedCharOptions;
     console.log(password)
   }
-  
-  console.log(passwordText)
-}
-}
 
+alert(password);
+  console.log(password)
+  return password
+}
+  console.log(password)
 
  
 // Add event listener to generate button
