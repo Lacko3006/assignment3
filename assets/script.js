@@ -59,24 +59,19 @@ const charsLower = [
   "y",
   "z",
 ];
-let password = "";
+let password = ""; 
 let charOptions = [];
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var passwordText = document.getElementById("#password").values = password;
+  passwordText.values = password;
+  console.log(passwordText)
 
-  passwordText.value = password;
-}
 
 function generatePassword() {
   let passwordLength = prompt("how long do you want the password to be?");
   if (passwordLength < 8 || passwordLength > 128) {
     window.alert("Size not permitted.");
-  }
-
-  for (let i = 1; i < passwordLength; i++) {
-    var randomCharOptions = Math.floor(Math.random() * charOptions.length);
-    var selectedCharOptions = charOptions[randomCharOptions];
   }
 
   let passwordCharsLow = prompt(
@@ -127,12 +122,18 @@ function generatePassword() {
   }
 
   for (let i = 0; i < passwordLength; i++) {
+    let password = "";
     var randomCharOptions = Math.floor(Math.random() * charOptions.length);
     var selectedCharOptions = charOptions[randomCharOptions];
-    password = password += selectedCharOptions;
-   console.log(password);
+    password = password + selectedCharOptions;
+    console.log(password)
   }
+  
+  console.log(passwordText)
 }
+}
+
+
  
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
