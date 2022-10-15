@@ -77,10 +77,8 @@ function generatePassword() {
   for (let i = 1; i < passwordLength; i++) {
     var randomCharOptions = Math.floor(Math.random() * charOptions.length);
     var selectedCharOptions = charOptions[randomCharOptions];
-   
   }
 
-  
   let passwordCharsLow = prompt(
     "Would you like to include lowercase characters?"
   );
@@ -102,7 +100,6 @@ function generatePassword() {
 
   if (passwordCharsUpp === "no") {
     window.alert("Uppercase characters dismissed.");
-  
   }
 
   let passwordCharsNum = prompt(
@@ -114,7 +111,6 @@ function generatePassword() {
   }
   if (passwordCharsNum === "no") {
     window.alert("Uppercase characters dismissed.");
-  
   }
 
   let passwordCharsSpecial = prompt(
@@ -123,18 +119,20 @@ function generatePassword() {
   if (passwordCharsSpecial === "yes") {
     charOptions = charOptions.concat(charsSpecial);
     window.alert("Special characters added.");
-   password = password + selectedCharOptions;
-   console.log(charOptions);
-  console.log(password);
+    password = password + selectedCharOptions;
   }
-  
+
   if (passwordCharsSpecial === "no") {
     window.alert("Special characters dismissed.");
   }
-}
-  
 
+  for (let i = 0; i < passwordLength; i++) {
+    var randomCharOptions = Math.floor(Math.random() * charOptions.length);
+    var selectedCharOptions = charOptions[randomCharOptions];
+    password = password += selectedCharOptions;
+   console.log(password);
+  }
+}
+ 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
