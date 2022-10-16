@@ -10,3 +10,4 @@ This project was build to explore and learn new skills in JavaScript, learning t
 ![JavaScript Password Generator](./assets/images/javascript-generator.gif)
 
 ## Link
+https://lacko3006.github.io/javascript-password-generator/
