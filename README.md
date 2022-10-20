@@ -7,7 +7,7 @@ This web application is my password generator created with HTML, CSS & JavaScrip
 This project was build to explore and learn new skills in JavaScript, learning these new skills is key in becoming a web developer and creating properly functioning web applications.
 
 ## Mock Up
-![JavaScript Password Generator](./assets/images/javascript-generator.gif)
+![JavaScript Password Generator](./assets/images/javascript-password-generator.gif)
 
 ## Link
 https://lacko3006.github.io/javascript-password-generator/
