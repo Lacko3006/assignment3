@@ -2,6 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 
+const unanswered = "Character not selected."
 const charsNum = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const charsSpecial = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 const charsUpp = [
@@ -68,63 +69,53 @@ function writePassword() {
   passwordText.value = password;
 
 function generatePassword() {
-  let passwordLength = prompt("Your password should be between 8 & 128 characters long");
+  let passwordLength = prompt("Please enter your password, this should be between 8 & 128 characters long.");
   if (passwordLength < 8 || passwordLength > 128) {
     window.alert("Size not permitted.");
-    return;
+    return charOptions;
   }
 
-  let passwordCharsLow = prompt(
-    "Would you like to include lowercase characters? Please enter yes or no"
+  let passwordCharsLow = window.confirm(
+    "Would you like to include lowercase characters? Please enter yes or no."
   );
-  if (passwordCharsLow === "yes" || true) {
+  if (passwordCharsLow == true) {
     charOptions = charOptions.concat(charsLower);
     window.alert("Lowercase characters added.");
-  } if (passwordCharsLow === "no" || null) {
+  } if (passwordCharsLow == false) {
     window.alert("Lowercase characters dismissed.");
-  } else {
-    return;
-  }
+  } 
 
-  if (passwordCharsLow === null) {
-    console.log("Hello")
-    return;
-  }
-
-  let passwordCharsUpp = prompt(
-    "Would you like to include uppercase characters? Please enter yes or no"
+  let passwordCharsUpp = window.confirm(
+    "Would you like to include uppercase characters? Please enter yes or no."
   );
-  if (passwordCharsUpp === "yes") {
+  if (passwordCharsUpp == true) {
     charOptions = charOptions.concat(charsUpp);
     window.alert("Uppercase characters added.");
   }
-
-  if (passwordCharsUpp === "no") {
+  if (passwordCharsUpp == false) {
     window.alert("Uppercase characters dismissed.");
   }
 
-  let passwordCharsNum = prompt(
-    "Would you like to include numeric characters? Please enter yes or no"
+  let passwordCharsNum = window.confirm(
+    "Would you like to include numeric characters? Please enter yes or no."
   );
-  if (passwordCharsNum === "yes") {
+  if (passwordCharsNum == true) {
     charOptions = charOptions.concat(charsNum);
     window.alert("Number characters added.");
   }
-  if (passwordCharsNum === "no") {
+  if (passwordCharsNum == false) {
     window.alert("Number characters dismissed.");
   }
 
-  let passwordCharsSpecial = prompt(
-    "Would you like to include special characters? Please enter yes or no"
+  let passwordCharsSpecial = window.confirm(
+    "Would you like to include special characters? Please enter yes or no."
   );
 
-  if (passwordCharsSpecial === "yes") {
+  if (passwordCharsSpecial == true) {
     charOptions = charOptions.concat(charsSpecial);
     window.alert("Special characters added.");
   } 
-
-
-  if (passwordCharsSpecial === "no") {
+  if (passwordCharsSpecial == false) {
     window.alert("Special characters dismissed.");
   }
   
@@ -135,7 +126,6 @@ function generatePassword() {
     var selectedCharOptions = charOptions[randomCharOptions];
     password = password + selectedCharOptions;
   }
-  console.log(password)
   alert(password);
   return password;
 }
