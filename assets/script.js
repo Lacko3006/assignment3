@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
 const charsNum = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const charsSpecial = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 const charsUpp = [
@@ -67,9 +68,10 @@ function writePassword() {
   passwordText.value = password;
 
 function generatePassword() {
-  let passwordLength = prompt("how long do you want the password to be?");
+  let passwordLength = prompt("Your password should be between 8 & 128 characters long");
   if (passwordLength < 8 || passwordLength > 128) {
     window.alert("Size not permitted.");
+    return;
   }
 
   let passwordCharsLow = prompt(
@@ -84,6 +86,12 @@ function generatePassword() {
     window.alert("Lowercase characters dismissed.");
     
   }
+
+  if (passwordCharsLow === null) {
+    console.log("Hello")
+    return;
+  }
+
   let passwordCharsUpp = prompt(
     "Would you like to include uppercase characters?"
   );
