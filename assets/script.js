@@ -69,7 +69,7 @@ function writePassword() {
   passwordText.value = password;
 
 function generatePassword() {
-  let passwordLength = prompt("Please enter your password, this should be between 8 & 128 characters long.");
+  let passwordLength = prompt("Please enter the amount of characters you wish your password to be, this should be between 8 & 128 characters long.");
   if (passwordLength < 8 || passwordLength > 128) {
     window.alert("Size not permitted.");
     return charOptions;
