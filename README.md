@@ -1,4 +1,4 @@
-# JavaScript Password enerator
+# JavaScript Password Generator
 
 ## Description
 
