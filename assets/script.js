@@ -76,7 +76,7 @@ function generatePassword() {
   }
 
   let passwordCharsLow = window.confirm(
-    "Would you like to include lowercase characters? Please enter yes or no."
+    "Would you like to include lowercase characters? Please select Cancel or OK."
   );
   if (passwordCharsLow == true) {
     charOptions = charOptions.concat(charsLower);
@@ -86,7 +86,7 @@ function generatePassword() {
   } 
 
   let passwordCharsUpp = window.confirm(
-    "Would you like to include uppercase characters? Please enter yes or no."
+    "Would you like to include uppercase characters? Please select Cancel or OK."
   );
   if (passwordCharsUpp == true) {
     charOptions = charOptions.concat(charsUpp);
@@ -97,7 +97,7 @@ function generatePassword() {
   }
 
   let passwordCharsNum = window.confirm(
-    "Would you like to include numeric characters? Please enter yes or no."
+    "Would you like to include numeric characters? Please select Cancel or OK."
   );
   if (passwordCharsNum == true) {
     charOptions = charOptions.concat(charsNum);
@@ -108,7 +108,7 @@ function generatePassword() {
   }
 
   let passwordCharsSpecial = window.confirm(
-    "Would you like to include special characters? Please enter yes or no."
+    "Would you like to include special characters? Please select Cancel or OK."
   );
 
   if (passwordCharsSpecial == true) {
