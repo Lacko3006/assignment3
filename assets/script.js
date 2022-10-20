@@ -75,16 +75,15 @@ function generatePassword() {
   }
 
   let passwordCharsLow = prompt(
-    "Would you like to include lowercase characters?"
+    "Would you like to include lowercase characters? Please enter yes or no"
   );
-  if (passwordCharsLow === "yes") {
+  if (passwordCharsLow === "yes" || true) {
     charOptions = charOptions.concat(charsLower);
     window.alert("Lowercase characters added.");
-  }
-
-  if (passwordCharsLow === "no") {
+  } if (passwordCharsLow === "no" || null) {
     window.alert("Lowercase characters dismissed.");
-    
+  } else {
+    return;
   }
 
   if (passwordCharsLow === null) {
@@ -93,7 +92,7 @@ function generatePassword() {
   }
 
   let passwordCharsUpp = prompt(
-    "Would you like to include uppercase characters?"
+    "Would you like to include uppercase characters? Please enter yes or no"
   );
   if (passwordCharsUpp === "yes") {
     charOptions = charOptions.concat(charsUpp);
@@ -105,7 +104,7 @@ function generatePassword() {
   }
 
   let passwordCharsNum = prompt(
-    "Would you like to include numeric characters?"
+    "Would you like to include numeric characters? Please enter yes or no"
   );
   if (passwordCharsNum === "yes") {
     charOptions = charOptions.concat(charsNum);
@@ -116,13 +115,14 @@ function generatePassword() {
   }
 
   let passwordCharsSpecial = prompt(
-    "Would you like to include special characters?"
+    "Would you like to include special characters? Please enter yes or no"
   );
 
   if (passwordCharsSpecial === "yes") {
     charOptions = charOptions.concat(charsSpecial);
     window.alert("Special characters added.");
-  }
+  } 
+
 
   if (passwordCharsSpecial === "no") {
     window.alert("Special characters dismissed.");
